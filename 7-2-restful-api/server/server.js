@@ -92,6 +92,15 @@ app.put("/api/songs/:id", async (req, res) => {
 
 // /api/songs/:id (Delete song)
 
+app.delete("/api/songs/:id", async (req, res) => {
+  const deleted = await Song.findByIdAndDelete(req.params.id);
+
+  if (!deleted) {
+    return res.status(404).json({ message: "Song not found" });
+  }
+
+  res.status(204).end();
+});
 
 
 

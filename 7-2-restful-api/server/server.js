@@ -52,6 +52,7 @@ app.get("/api/songs/:id", async (req, res) => {
 });
 
 // api/songs (Insert song)
+
 app.post("/api/songs", async (req, res) => {
     console.log("POST HIT", req.body);
   try {
@@ -101,7 +102,5 @@ app.delete("/api/songs/:id", async (req, res) => {
 
   res.status(204).end();
 });
-
-
 
 app.listen(PORT, () => console.log(`API running on http://localhost:${PORT}`));
